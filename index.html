@@ -8,12 +8,12 @@
   <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="食光"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./apple-touch-icon.png"><meta name="theme-color" content="#f8f7f3"><meta name="description" content="食光，一本属于你的日常食谱。收藏美味，记录生活。">
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <title>食光 · 我的食谱</title>
-  <script type="module" crossorigin src="./index-DSvE9IJ3.js"></script>
+  <script type="module" crossorigin src="./index-CatyxnzJ.js"></script>
   <link rel="stylesheet" crossorigin href="./index-CkB5E_jc.css">
 </head>
 <body>
   <section class="auth-screen" aria-label="邮箱登录">
-    <div class="auth-story"><span class="auth-brand">食光 <small>RECIPE JOURNAL</small></span><h1>一餐一饭，<br>皆是生活。</h1><p>收藏喜欢的味道，<br>在每一个厨房继续你的故事。</p><img src="./pasta.jpg" alt="一盘罗勒青酱意面"></div>
+    <div class="auth-story"><span class="auth-brand">食光 <small>RECIPE JOURNAL</small></span><h1>一餐一饭，<br>皆是生活。</h1><p>收藏喜欢的味道，<br>在每一个厨房继续你的故事。</p><img src="./pasta-hero.webp" alt="一盘罗勒青酱意面"></div>
     <div class="auth-panel"><span class="eyebrow">YOUR OWN LITTLE KITCHEN</span><h2 id="auth-title">欢迎回到你的厨房</h2><p class="auth-intro">用邮箱登录，在手机和电脑之间同步食谱。</p>
       <p class="auth-link-notice" role="alert" hidden></p>
       <form id="auth-form"><label class="field" id="email-field">邮箱地址<input type="email" name="email" autocomplete="email" inputmode="email" required placeholder="your@email.com"></label><label class="field" id="password-field">密码<input type="password" name="password" autocomplete="current-password" required placeholder="输入你的密码" maxlength="128"></label><label class="field" id="confirm-password-field" hidden>确认新密码<input type="password" name="confirmPassword" autocomplete="new-password" minlength="10" maxlength="128" disabled></label><p id="auth-message" role="status" aria-live="polite"></p><button class="primary" id="auth-submit" type="submit">登录我的厨房</button></form>
@@ -36,7 +36,7 @@
     <header class="topbar"><span class="breadcrumb">我的厨房 <span>/</span> <strong id="breadcrumb-title">全部食谱</strong></span><div class="cloud-tools"><span class="storage-status">正在连接云端…</span><button id="refresh-cloud" aria-label="刷新云端食谱">同步</button><button id="change-password" type="button">修改密码</button><button class="signout" id="signout" type="button">退出</button></div></header>
     <main>
       <section class="page-heading"><div><span class="eyebrow">A LITTLE JOY, EVERY DAY</span><h1 id="page-title">我的食谱<span class="title-dot">.</span></h1><p id="page-description">把喜欢的味道，变成生活的日常。</p></div><button class="primary" id="new-recipe"><span data-icon="plus"></span>记录新食谱</button></section>
-      <section class="hero" id="hero"><img src="./pasta.jpg" alt="青酱意面，搭配罗勒和小番茄"><div class="hero-copy"><span class="hero-label"><span data-icon="sun"></span> 今日灵感</span><h2>留一点时间，<br>给一顿好饭。</h2><p>一盘罗勒青酱意面，<br>给忙碌的日常添一口清新。</p><button id="hero-open">看看这道菜 <span data-icon="arrow"></span></button></div><div class="hero-caption">BASIL PESTO PASTA <span>20 MIN · 简单</span></div></section>
+      <section class="hero" id="hero"><img src="./pasta-hero.webp" alt="青酱意面，搭配罗勒和小番茄"><div class="hero-copy"><span class="hero-label"><span data-icon="sun"></span> 今日灵感</span><h2>留一点时间，<br>给一顿好饭。</h2><p>一盘罗勒青酱意面，<br>给忙碌的日常添一口清新。</p><button id="hero-open">看看这道菜 <span data-icon="arrow"></span></button></div><div class="hero-caption">BASIL PESTO PASTA <span>20 MIN · 简单</span></div></section>
       <section class="recipe-section" aria-label="食谱列表">
         <div class="collection-heading"><h2 id="collection-title">全部食谱 <span id="result-count"></span></h2><div class="list-tools"><label class="search"><span data-icon="search"></span><input id="search" type="search" placeholder="搜索菜名、食材…" aria-label="搜索菜名或食材"></label><select id="sort" aria-label="食谱排序"><option value="recent">最近更新</option><option value="time">用时最短</option><option value="name">菜名排序</option></select></div></div>
         <div class="filters" id="filters" aria-label="食谱分类"></div>
