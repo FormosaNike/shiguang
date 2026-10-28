@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https://*.supabase.co; connect-src 'self' data: https://*.supabase.co wss://*.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="no-referrer">
+  <script src="./frame-guard.js"></script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="食光"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./apple-touch-icon.png"><meta name="theme-color" content="#f8f7f3"><meta name="description" content="食光，一本属于你的日常食谱。收藏美味，记录生活。">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <title>食光 · 我的食谱</title>
+  <script type="module" crossorigin src="./index-DSvE9IJ3.js"></script>
+  <link rel="stylesheet" crossorigin href="./index-CkB5E_jc.css">
+</head>
+<body>
+  <section class="auth-screen" aria-label="邮箱登录">
+    <div class="auth-story"><span class="auth-brand">食光 <small>RECIPE JOURNAL</small></span><h1>一餐一饭，<br>皆是生活。</h1><p>收藏喜欢的味道，<br>在每一个厨房继续你的故事。</p><img src="./pasta.jpg" alt="一盘罗勒青酱意面"></div>
+    <div class="auth-panel"><span class="eyebrow">YOUR OWN LITTLE KITCHEN</span><h2 id="auth-title">欢迎回到你的厨房</h2><p class="auth-intro">用邮箱登录，在手机和电脑之间同步食谱。</p>
+      <p class="auth-link-notice" role="alert" hidden></p>
+      <form id="auth-form"><label class="field" id="email-field">邮箱地址<input type="email" name="email" autocomplete="email" inputmode="email" required placeholder="your@email.com"></label><label class="field" id="password-field">密码<input type="password" name="password" autocomplete="current-password" required placeholder="输入你的密码" maxlength="128"></label><label class="field" id="confirm-password-field" hidden>确认新密码<input type="password" name="confirmPassword" autocomplete="new-password" minlength="10" maxlength="128" disabled></label><p id="auth-message" role="status" aria-live="polite"></p><button class="primary" id="auth-submit" type="submit">登录我的厨房</button></form>
+      <div class="auth-links"><button class="text-button" id="auth-signup">第一次来？注册邮箱账号</button><button class="text-button" id="auth-reset">忘记密码</button><button class="text-button" id="auth-back" hidden>返回登录</button></div><p class="auth-footnote">你的食谱和照片，仅登录自己的账号后可见。</p>
+    </div>
+  </section>
+  <aside class="sidebar">
+    <a class="brand" href="#" aria-label="食光首页"><span class="brand-mark">食</span><span>食光<small>RECIPE JOURNAL</small></span></a>
+    <div class="sidebar-label">我的厨房</div>
+    <nav id="navigation" aria-label="主导航">
+      <button class="nav-item active" data-view="all"><span data-icon="book"></span>全部食谱<span class="nav-count" id="all-count">0</span></button>
+      <button class="nav-item" data-view="favorites"><span data-icon="heart"></span>我的收藏<span class="nav-count" id="favorite-count">0</span></button>
+      <button class="nav-item" data-view="cooked"><span data-icon="check"></span>做过的菜<span class="nav-count" id="cooked-count">0</span></button>
+    </nav>
+    <div class="sidebar-note"><span data-icon="sprout"></span><p>好好吃饭，<br>也是认真生活。</p><span>把喜欢的味道，慢慢留下来。</span></div>
+    <div class="sidebar-bottom"><button id="backup-button"><span data-icon="archive"></span>数据与备份</button><div class="profile"><span class="avatar">我</span><div><span id="account-name">我的私人厨房</span><small><i></i> 邮箱已登录</small></div></div></div>
+  </aside>
+  <div class="app-shell">
+    <p class="auth-link-notice" role="alert" hidden></p>
+    <header class="topbar"><span class="breadcrumb">我的厨房 <span>/</span> <strong id="breadcrumb-title">全部食谱</strong></span><div class="cloud-tools"><span class="storage-status">正在连接云端…</span><button id="refresh-cloud" aria-label="刷新云端食谱">同步</button><button id="change-password" type="button">修改密码</button><button class="signout" id="signout" type="button">退出</button></div></header>
+    <main>
+      <section class="page-heading"><div><span class="eyebrow">A LITTLE JOY, EVERY DAY</span><h1 id="page-title">我的食谱<span class="title-dot">.</span></h1><p id="page-description">把喜欢的味道，变成生活的日常。</p></div><button class="primary" id="new-recipe"><span data-icon="plus"></span>记录新食谱</button></section>
+      <section class="hero" id="hero"><img src="./pasta.jpg" alt="青酱意面，搭配罗勒和小番茄"><div class="hero-copy"><span class="hero-label"><span data-icon="sun"></span> 今日灵感</span><h2>留一点时间，<br>给一顿好饭。</h2><p>一盘罗勒青酱意面，<br>给忙碌的日常添一口清新。</p><button id="hero-open">看看这道菜 <span data-icon="arrow"></span></button></div><div class="hero-caption">BASIL PESTO PASTA <span>20 MIN · 简单</span></div></section>
+      <section class="recipe-section" aria-label="食谱列表">
+        <div class="collection-heading"><h2 id="collection-title">全部食谱 <span id="result-count"></span></h2><div class="list-tools"><label class="search"><span data-icon="search"></span><input id="search" type="search" placeholder="搜索菜名、食材…" aria-label="搜索菜名或食材"></label><select id="sort" aria-label="食谱排序"><option value="recent">最近更新</option><option value="time">用时最短</option><option value="name">菜名排序</option></select></div></div>
+        <div class="filters" id="filters" aria-label="食谱分类"></div>
+        <div class="recipe-grid" id="recipe-grid"></div>
+        <div id="empty-state" class="empty-state" hidden><span data-icon="book"></span><h3>这里还有一点留白</h3><p>记录一道喜欢的菜，让你的食谱慢慢丰富起来。</p><button class="secondary" id="empty-action">记录第一道菜</button></div>
+      </section>
+      <footer>一餐一饭，皆是生活。<span>MADE WITH A LITTLE LOVE</span></footer>
+    </main>
+  </div>
+  <dialog id="detail-dialog" class="detail-dialog" aria-label="食谱详情"><div id="detail-content"></div></dialog>
+  <dialog id="editor-dialog" class="editor-dialog" aria-labelledby="editor-title">
+    <form id="recipe-form"><div class="dialog-header"><div><span class="eyebrow">SAVE A LITTLE DELICIOUSNESS</span><h2 id="editor-title">记录新食谱</h2></div><button type="button" class="icon-button" data-close="editor-dialog" aria-label="关闭编辑"><span data-icon="close"></span></button></div>
+      <div class="editor-body">
+        <label class="cover-upload" id="cover-upload"><input id="cover-input" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><img id="cover-preview" alt="食谱封面预览" hidden><span class="upload-copy"><span data-icon="camera"></span><strong>添加一道美味的照片</strong><small>点击上传 JPG、PNG 或 WebP，自动压缩保存</small></span></label><button type="button" id="remove-cover" class="text-button" hidden>移除封面</button>
+        <label class="field">食谱名称 <span class="required">*</span><input name="title" required maxlength="60" placeholder="例如：妈妈的番茄炒蛋"></label>
+        <label class="field">一句话介绍<textarea name="description" rows="2" maxlength="300" placeholder="这道菜有什么特别的地方？"></textarea></label>
+        <div class="field-row"><label class="field">分类<select name="category" id="category-select"></select></label><label class="field">用时（分钟）<input name="minutes" type="number" min="1" max="1440" required value="20"></label><label class="field">份数（人）<input name="servings" type="number" min="1" max="50" required value="2"></label></div>
+        <div class="section-label"><h3>所需食材 <span class="required">*</span></h3><span>用量留空表示「适量」</span></div><div class="ingredient-labels"><span>食材</span><span>用量</span><span>单位</span><span></span></div><div id="ingredient-rows"></div><button type="button" class="text-button" id="add-ingredient">＋ 添加食材</button>
+        <div class="section-label"><h3>做法步骤 <span class="required">*</span></h3><span>把每一步都写清楚</span></div><div id="step-rows"></div><button type="button" class="text-button" id="add-step">＋ 添加步骤</button>
+        <label class="field notes-field">厨房笔记<textarea name="notes" rows="3" maxlength="3000" placeholder="成功的小窍门、下次想调整的地方…"></textarea></label>
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+      </div><div class="dialog-actions"><span>保存到你的私人云端</span><button type="button" class="secondary" data-close="editor-dialog">取消</button><button class="primary" id="save-recipe" type="submit">保存食谱</button></div>
+    </form>
+  </dialog>
+  <dialog id="backup-dialog" class="backup-dialog"><div class="dialog-header"><h2>数据与备份</h2><button class="icon-button" data-close="backup-dialog" aria-label="关闭备份"><span data-icon="close"></span></button></div><div class="backup-body"><div class="local-notice"><span data-icon="archive"></span><div><strong>你的食谱，跟着账号走</strong><p>使用同一个邮箱账号登录，就能在 Mac 和 iPhone 查看食谱。保存后会上传云端；切回页面时自动同步，也可以点右上角「同步」。建议定期导出备份。</p></div></div><button class="backup-option" id="export-data"><span data-icon="download"></span><span><strong>导出完整备份</strong><small>保存食谱、上传的照片、收藏和烹饪记录</small></span><span data-icon="arrow"></span></button><label class="backup-option" for="import-data"><span data-icon="upload"></span><span><strong>导入备份</strong><small>将本地版或云端版备份合并到你的云端食谱</small></span><span data-icon="arrow"></span></label><input id="import-data" type="file" accept="application/json,.json" hidden><p class="backup-tip">从原来的本地版迁移：先在那里导出完整备份，再在此导入。照片也会一并上传。新账号从空食谱开始。</p></div></dialog>
+  <dialog id="password-dialog" class="password-dialog" aria-labelledby="password-title">
+    <form id="password-form">
+      <div class="dialog-header"><h2 id="password-title">修改密码</h2></div>
+      <div class="password-body"><p class="password-intro">为当前登录的食光账号设置新密码。</p>
+        <div id="password-fields"><label class="field">新密码<input type="password" name="newPassword" autocomplete="new-password" required minlength="10" maxlength="128" placeholder="至少 10 位" aria-describedby="password-hint"></label>
+        <label class="field">确认新密码<input type="password" name="confirmPassword" autocomplete="new-password" required minlength="10" maxlength="128" placeholder="再次输入新密码"></label>
+        <p id="password-hint">建议组合字母、数字和符号。</p></div>
+        <p id="password-message" role="status" aria-live="polite"></p>
+      </div><div class="dialog-actions"><button id="password-cancel" type="button" class="secondary">取消</button><button id="password-save" type="submit" class="primary">保存新密码</button></div>
+    </form>
+  </dialog>
+  <dialog id="confirm-dialog" class="confirm-dialog"><h2 id="confirm-title"></h2><p id="confirm-description"></p><div class="confirm-actions"><button id="confirm-no" class="secondary">取消</button><button id="confirm-yes" class="primary">确认</button></div></dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+</body></html>
